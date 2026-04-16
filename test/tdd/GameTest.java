@@ -26,5 +26,16 @@ public class GameTest {
 		assertEquals(0, game.score());
 	}
 	
+	@Test
+	void test_incrementation() {
+		int score = 0;
+		for (int i = 0; i<20; i++) {
+			game.roll(3);
+			score += 3;
+		}
+		assertEquals(score, game.score());
+	}
+	
+	
 	
 }

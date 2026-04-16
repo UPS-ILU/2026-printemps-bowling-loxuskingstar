@@ -14,8 +14,8 @@
 - [ ] B22
 
 BACKLOG : 
-- [ ] On commence à 0 points
-- [ ] On incrémente le nombre de point avec le nombre de quilles tombées
+- [X] On commence à 0 points
+- [X] On incrémente le nombre de point avec le nombre de quilles tombées
 - [ ] En cas de strike (10 quilles du premier coup) on ajoute en bonus le nombre de quilles tombées sur les deux prochains lancés
 - [ ] En cas de spare (10 quilles en 2 coups) on ajoute en bonus le nombre de quilles tombées sur le prochain lancé.
 - [ ] La partie s'arrête en 10 tours (de 2 lancés)
