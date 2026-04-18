@@ -52,4 +52,13 @@ public class GameTest {
         // Score attendu : 10 (Strike) + 7 (3+4 du tour suivant) + 7 (3+4 en bonus du strike) = 24
         assertEquals(24, game.score());
     }
+    
+    @Test
+    void test_cas_general() {
+        int[] lancers = {1, 2, 10, 0, 10, 6, 2, 0, 0, 10, 10, 6, 4, 8, 2, 2, 7};
+        for (int lancer : lancers) {
+            game.roll(lancer);
+        }
+        assertEquals(132, game.score());
+    }
 }
