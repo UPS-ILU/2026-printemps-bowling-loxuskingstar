@@ -12,7 +12,7 @@ public class GameTest {
         game = new Game();
     }
     
-    // Fonction refactor des boucles
+    // Fonction de refactor des boucles
     private void rollMany(int n, int pins) {
         for (int i = 0; i < n; i++) {
             game.roll(pins);
@@ -29,5 +29,16 @@ public class GameTest {
     void test_que_des_un() {
         rollMany(20, 1);
         assertEquals(20, game.score());
+    }
+    
+    @Test
+    void test_un_seul_spare() {
+        game.roll(5);
+        game.roll(5); // 5+5 = 10 donc SPARE
+        game.roll(3); // Lancer du bonus
+        rollMany(17, 0); // Que des 0 
+        
+        // Score visé : 10 (le spare) + 3 (bonus) + 3 (lancer suivant) = 16
+        assertEquals(16, game.score());
     }
 }
