@@ -41,4 +41,15 @@ public class GameTest {
         // Score visé : 10 (le spare) + 3 (bonus) + 3 (lancer suivant) = 16
         assertEquals(16, game.score());
     }
+    
+    @Test
+    void test_un_seul_strike() {
+        game.roll(10); // Strike
+        game.roll(3); // Lancers des bonus
+        game.roll(4);
+        rollMany(16, 0); // Que des 0
+        
+        // Score attendu : 10 (Strike) + 7 (3+4 du tour suivant) + 7 (3+4 en bonus du strike) = 24
+        assertEquals(24, game.score());
+    }
 }
