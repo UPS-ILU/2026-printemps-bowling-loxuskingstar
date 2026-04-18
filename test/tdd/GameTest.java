@@ -61,4 +61,10 @@ public class GameTest {
         }
         assertEquals(132, game.score());
     }
+    
+    @Test
+    void test_partie_parfaite() {
+        rollMany(12, 10);
+        assertEquals(300, game.score());
+    }
 }
