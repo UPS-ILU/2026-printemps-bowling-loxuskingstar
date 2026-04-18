@@ -12,24 +12,22 @@ public class GameTest {
         game = new Game();
     }
     
-    @Test
-	void test_vide() {
-		assertEquals(0, game.score());
-	}
+    // Fonction refactor des boucles
+    private void rollMany(int n, int pins) {
+        for (int i = 0; i < n; i++) {
+            game.roll(pins);
+        }
+    }
     
     @Test
-    void test_zero() {
-        for (int i = 0; i < 20; i++) {
-            game.roll(0);
-        }
+    void test_gouttiere() {
+        rollMany(20, 0);
         assertEquals(0, game.score());
     }
     
     @Test
-    void test_que_un() {
-        for (int i = 0; i < 20; i++) {
-            game.roll(1);
-        }
+    void test_que_des_un() {
+        rollMany(20, 1);
         assertEquals(20, game.score());
     }
 }
